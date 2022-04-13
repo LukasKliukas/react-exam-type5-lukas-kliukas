@@ -20,6 +20,4 @@
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
 
-### You need to import Db that is in file bills_system.sql
-
 ## how to use:
