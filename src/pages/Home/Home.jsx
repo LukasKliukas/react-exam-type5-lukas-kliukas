@@ -8,6 +8,7 @@ const getUrl = 'https://autumn-delicate-wilderness.glitch.me/v1/content/skills';
 
 const Home = () => {
   const [skillsArr, setSkillsArr] = useState([]);
+  const [isArr, setIsArr] = useState(false);
 
   useEffect(() => {
     getSkills();
@@ -19,13 +20,16 @@ const Home = () => {
     const skillsFromApi = await getData(getUrl, token);
     console.log('skillsFromApi ===', skillsFromApi);
     setSkillsArr(skillsFromApi);
+    if (skillsFromApi.length > 0) {
+      setIsArr(true);
+    }
   };
 
   return (
     <Container>
       <h2>Home page</h2>
       <Grid>
-        {skillsArr.length > 0 &&
+        {isArr &&
           skillsArr.map((sObj) => (
             <Card
               key={sObj.id}
@@ -33,9 +37,7 @@ const Home = () => {
               description={sObj.description}
             />
           ))}
-        {skillsArr.length === 0 && (
-          <h2>No cards created, please create some in add page !</h2>
-        )}
+        {!isArr && <h2>No cards created, please create some in add page !</h2>}
       </Grid>
     </Container>
   );
