@@ -25,13 +25,17 @@ const Home = () => {
     <Container>
       <h2>Home page</h2>
       <Grid>
-        {skillsArr.map((sObj) => (
-          <Card
-            key={sObj.id}
-            title={sObj.title}
-            description={sObj.description}
-          />
-        ))}
+        {skillsArr.length > 0 &&
+          skillsArr.map((sObj) => (
+            <Card
+              key={sObj.id}
+              title={sObj.title}
+              description={sObj.description}
+            />
+          ))}
+        {skillsArr.length === 0 && (
+          <h2>Nėra sukurtų kortelių, sukurkite add puslapyje</h2>
+        )}
       </Grid>
     </Container>
   );
