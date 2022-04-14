@@ -1,6 +1,7 @@
 import Container from '../../components/UI/Container';
 import css from './Register.module.css';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const regUrl = 'https://autumn-delicate-wilderness.glitch.me/v1/auth/register';
 
@@ -8,6 +9,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isError, setIsError] = useState(false);
+  const history = useHistory();
 
   async function sendPostFetch() {
     //Validacija
@@ -53,10 +55,9 @@ const Register = () => {
     const atsInJs = await resp.json();
     console.log('atsInJs ===', atsInJs);
 
-    // if (atsInJs.changes === 1) {
-    //   //redirect to pets page
-    //   history.push('/');
-    // }
+    if (atsInJs.changes === 1) {
+      history.push('/login');
+    }
     if (atsInJs.err) {
       setIsError(true);
     }
@@ -71,7 +72,11 @@ const Register = () => {
     <Container>
       <form onSubmit={submitHandler} className={css.form}>
         <h2>Please register</h2>
-        {isError && <h3 className={css.err}>Please check the form !</h3>}
+        {isError && (
+          <h3 className={css.err}>
+            Please check the form ! Incorrect data sent
+          </h3>
+        )}
         <label htmlFor='email'>Email for registration : </label>
         <input
           type='email'
@@ -82,10 +87,10 @@ const Register = () => {
         />
         <label htmlFor='password'>Password for registration : </label>
         <input
-          type='text'
+          type='password'
           onChange={(e) => setPassword(e.target.value)}
           id='password'
-          placeholder='Enter your email here'
+          placeholder='Enter your password here'
           value={password}
         />
         <button className={css.btn} type='submit'>

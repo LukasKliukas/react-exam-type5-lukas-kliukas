@@ -4,11 +4,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE1LCJlbWFpb
 ####
 POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE1LCJlbWFpbCI6Im1hcml1c0BtYXJpdXMuY29tIiwiaWF0IjoxNjQ5ODU4MTU3fQ.kbJOppH4Bc9O4563J5LzqUzSMIAPM8uVDWaOKyFFVi4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIwLCJlbWFpbCI6Imx1a2Fza2xpdWthc0BnbWFpbC5jb20iLCJpYXQiOjE2NDk5MzMxMjZ9.3bMEHKWXM0qlKEASz9nkaHC7aw6ixaZSe8_nOl98228
 
 {
-  "title": "HTML",
-  "description": "Sometimes can be tricky"
+  "title": "CSS",
+  "description": "Intresting to use then you know what to do"
 }
 
 ####
