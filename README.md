@@ -21,3 +21,7 @@
     "web-vitals": "^2.1.4"
 
 ## how to use:
+
+1. Register to App with email and password.
+2. Login to App with same email and password as registrated before.
+3. Home page shows skills that are created by you. If none have been created, create some in the Add page.
