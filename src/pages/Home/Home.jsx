@@ -34,7 +34,7 @@ const Home = () => {
             />
           ))}
         {skillsArr.length === 0 && (
-          <h2>Nėra sukurtų kortelių, sukurkite add puslapyje</h2>
+          <h2>No cards created, please create some in add page !</h2>
         )}
       </Grid>
     </Container>
