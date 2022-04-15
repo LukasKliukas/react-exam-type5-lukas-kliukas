@@ -16,9 +16,7 @@ const Home = () => {
 
   const getSkills = async () => {
     const token = localStorage.getItem('token');
-    console.log('token ===', token);
     const skillsFromApi = await getData(getUrl, token);
-    console.log('skillsFromApi ===', skillsFromApi);
     setSkillsArr(skillsFromApi);
     if (skillsFromApi.length > 0) {
       setIsArr(true);

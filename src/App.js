@@ -15,13 +15,10 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   function login() {
-    console.log('App.js login');
     setIsUserLoggedIn(true);
-    // set LocalStorage value
   }
 
   function logout() {
-    console.log('App.js logout');
     setIsUserLoggedIn(false);
   }
 

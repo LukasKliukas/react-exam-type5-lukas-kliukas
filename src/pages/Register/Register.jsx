@@ -12,34 +12,6 @@ const Register = () => {
   const history = useHistory();
 
   async function sendPostFetch() {
-    //Validacija
-    // if (petName.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     name: 'Name cant be blank',
-    //   }));
-    // }
-    // if (dob.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     dob: 'Dob cant be blank',
-    //   }));
-    // }
-    // if (email.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     client_email: 'Email cant be blank',
-    //   }));
-    // }
-    //ar yra klaidu
-    // console.log('errorObj ===', errorObj);
-    // const isErrorsEmpty = Object.values(errorObj).every((el) => el === '');
-    // console.log('isErrorsEmpty ===', isErrorsEmpty);
-    // if (isError) {
-    //   return;
-    // }
-    //jei yra mes nutraukiame funkcijos vygdyma
-
     const newPostObj = {
       email: email,
       password: password,
@@ -53,7 +25,6 @@ const Register = () => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
-    console.log('atsInJs ===', atsInJs);
 
     if (atsInJs.changes === 1) {
       history.push('/login');

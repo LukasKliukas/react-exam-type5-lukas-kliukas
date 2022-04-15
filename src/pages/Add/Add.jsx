@@ -13,34 +13,6 @@ const Add = () => {
   useEffect(() => {}, []);
 
   async function sendPostFetch() {
-    //Validacija
-    // if (petName.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     name: 'Name cant be blank',
-    //   }));
-    // }
-    // if (dob.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     dob: 'Dob cant be blank',
-    //   }));
-    // }
-    // if (email.trim() === '') {
-    //   setErrorObj((prevState) => ({
-    //     ...prevState,
-    //     client_email: 'Email cant be blank',
-    //   }));
-    // }
-    //ar yra klaidu
-    // console.log('errorObj ===', errorObj);
-    // const isErrorsEmpty = Object.values(errorObj).every((el) => el === '');
-    // console.log('isErrorsEmpty ===', isErrorsEmpty);
-    // if (isError) {
-    //   return;
-    // }
-    //jei yra mes nutraukiame funkcijos vygdyma
-
     const newPostObj = {
       title: title,
       description: description,
@@ -54,24 +26,14 @@ const Add = () => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
-    console.log('atsInJs ===', atsInJs);
     if (atsInJs.msg) {
       setMessage(atsInJs.msg);
     }
     if (atsInJs.err) {
       setMessage(atsInJs.err);
     }
-
-    // if (atsInJs.changes === 1) {
-    //   //redirect to pets page
-    //   history.push('/');
-    // }
-    // if (atsInJs.err) {
-    //   setIsError(true);
-    // }
   }
   function submitHandler(e) {
-    // setIsError(false);
     e.preventDefault();
     sendPostFetch();
   }
