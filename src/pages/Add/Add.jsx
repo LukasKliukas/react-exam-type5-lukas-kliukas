@@ -26,6 +26,7 @@ const Add = () => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
+
     if (atsInJs.msg) {
       setMessage(atsInJs.msg);
     }
