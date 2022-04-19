@@ -11,8 +11,8 @@ const Register = () => {
   const [isError, setIsError] = useState(false);
   const history = useHistory();
 
-  async function sendPostFetch() {
-    const newPostObj = {
+  async function sendRegisterFetch() {
+    const registerObj = {
       email: email,
       password: password,
     };
@@ -22,7 +22,7 @@ const Register = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newPostObj),
+      body: JSON.stringify(registerObj),
     });
     const atsInJs = await resp.json();
 
@@ -36,7 +36,7 @@ const Register = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    sendPostFetch();
+    sendRegisterFetch();
   }
 
   return (

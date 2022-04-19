@@ -14,8 +14,8 @@ const Login = () => {
   const [isError, setIsError] = useState(false);
   const history = useHistory();
 
-  async function sendPostFetch() {
-    const newPostObj = {
+  async function sendLoginFetch() {
+    const loginObj = {
       email: email,
       password: password,
     };
@@ -25,7 +25,7 @@ const Login = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newPostObj),
+      body: JSON.stringify(loginObj),
     });
     const atsInJs = await resp.json();
 
@@ -41,7 +41,7 @@ const Login = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    sendPostFetch();
+    sendLoginFetch();
   }
 
   return (

@@ -26,6 +26,7 @@ const Add = () => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
+    console.log('atsInJs ===', atsInJs);
 
     if (atsInJs.msg) {
       setMessage(atsInJs.msg);
